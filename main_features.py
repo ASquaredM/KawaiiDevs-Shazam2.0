@@ -9,7 +9,7 @@ def load_sound(filename):
     return [data,sr]
 
 def spectro(song,sr):
-    f, t, sxx = signal.spectrogram(x, sr)
+    f, t, sxx = signal.spectrogram(song, sr)
     return sxx
 
 
