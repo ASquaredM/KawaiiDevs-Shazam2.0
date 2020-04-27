@@ -6,6 +6,7 @@ filename = "oki_doki_boomer_09.mp3"
 
 def hash(feature):
     
+    #convert feature array or spect array into image for hashing
     data =  PIL.Image.fromarray(feature,mode= 'RGB')
     songhash = imagehash.phash(data)
     return songhash
