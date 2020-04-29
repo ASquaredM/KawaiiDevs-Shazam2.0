@@ -5,7 +5,7 @@ filename = "01.mp3"
 
 def load_sound(filename):
     
-    data, sr = librosa.load(filename,duration=60.0)
+    data, sr = librosa.load(filename,duration=60.0,sr=44100)
     return [data,sr]
 
 def spectro(song,sr):
