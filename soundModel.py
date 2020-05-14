@@ -18,7 +18,8 @@ class SoundData():
                                                  sr=44100)
 
     def playAudio(self):
-        sd.play(self.sndByte, self.sr)
+        #sd.play(self.sndByte, self.sr)
+        return
 
     def mix(self, imageToBeMixed: 'SoundData', ratio: float):
         Mix = SoundData()

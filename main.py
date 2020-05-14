@@ -7,6 +7,7 @@ import sounddevice as sd
 from SideWindowClass import SideWindowClass
 import UI.UI as UI
 from soundModel import SoundData as SD
+import database.GetSemelarity as GS 
 
 
 class ApplicationWindow(UI.Ui_MainWindow):
@@ -62,6 +63,11 @@ class ApplicationWindow(UI.Ui_MainWindow):
             self.InsertAtIndex(i, 0, self.Snd[i].sndPath)
             if self.SndUp[0] == self.SndUp[1] == True:
                 self.mixTracks()
+            
+            SongSimilarName=GS.returnInfo(GS.GetSimilerTo(self.Snd[i].sndByte,44100)[0])
+
+            self.InsertAtIndex(i, 1,SongSimilarName[0])
+            
 
     def mixTracks(self):
         self.EnableMixer()
